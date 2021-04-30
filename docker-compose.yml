@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+    mysql:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: sulu
+        volumes:
+        - ./volumes/mysql:/var/lib/mysql
+        ports:
+        - 3306:3306
+
+#    elasticsearch:
+#        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.0
+#        ports:
+#        - 9200:9200
+#        environment:
+#            discovery.type: single-node
+#            xpack.security.enabled: "false"
+#        volumes:
+#        - ./volumes/elasticsearch:/usr/share/elasticsearch/data
+
+#    redis:
+#        image: redis:5.0
+#        ports:
+#        - 6379:6379
+
+#    jackrabbit:
+#        image: sulu/jackrabbit:2.18
+#        environment:
+#            DATABASE_HOST: "mysql"
+#            DATABASE_PORT: "3306"
+#            DATABASE_NAME: "jackrabbit"
+#            DATABASE_USER: "root"
+#            DATABASE_PASS: "sulu"
+#        ports:
+#        - 8080:8080
+#        volumes:
+#        - ./volumes/jackrabbit:/opt/jackrabbit/repository
+#        depends_on:
+#        - "mysql"
