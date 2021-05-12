@@ -2,6 +2,7 @@ server:
   command: "php public/website.php"
   env:
     - APP_RUNTIME: Runtime\RoadRunnerSymfonyNyholm\Runtime
+    - APP_ENV: prod
 
 logs:
   mode: production
